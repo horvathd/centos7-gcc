@@ -1,6 +1,6 @@
 FROM centos:7 AS compiler
 
-ARG GCC_VERSION=9.2.0
+ARG GCC_VERSION=9.3.0
 
 RUN yum update -y
 RUN yum install -y wget gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-devel zlib-devel file
