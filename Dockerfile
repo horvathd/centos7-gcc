@@ -22,6 +22,6 @@ RUN yum update -y && \
     yum install -y fakeroot alien && \
     yum clean all
 
-COPY --from=compiler /gcc/gcc-${GCC_VERSION}-install /
+COPY --from=compiler /gcc/gcc-${GCC_VERSION}-install /usr/
 
 CMD ["bash"]
