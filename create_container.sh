@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ $# -eq 0 ]; then
-    gcc_version=9.3.0
+    gcc_version=10-20200405
 else
     gcc_version=$1
 fi
