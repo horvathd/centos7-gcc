@@ -1,4 +1,4 @@
-ARG GCC_VERSION=10.1.0
+ARG GCC_VERSION=10.2.0
 
 FROM centos:7 AS compiler
 
