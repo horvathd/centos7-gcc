@@ -1,4 +1,4 @@
-ARG GCC_VERSION=10.2.0
+ARG GCC_VERSION=11.1.0
 
 FROM centos:7 AS compiler
 
@@ -24,8 +24,8 @@ FROM centos:7
 ARG GCC_VERSION
 
 RUN yum update -y && \
-    yum install -y make glibc-headers glibc-devel git epel-release ed rpm-build libmpc mpfr && \
-    yum install -y fakeroot alien && \
+    yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm && \
+    yum install -y make glibc-headers glibc-devel git ed rpm-build libmpc mpfr fakeroot alien && \
     yum clean all
 
 COPY --from=compiler /gcc/gcc-${GCC_VERSION}-install /usr/
