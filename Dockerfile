@@ -5,7 +5,7 @@ RUN yum install -y wget gcc gcc-c++ make bison flex gmp-devel libmpc-devel mpfr-
 
 WORKDIR /gcc
 
-ARG GCC_VERSION=11.1.0
+ARG GCC_VERSION=11.2.0
 
 RUN wget -nv https://ftp.gnu.org/gnu/gcc/gcc-${GCC_VERSION}/gcc-${GCC_VERSION}.tar.gz
 RUN tar -zxf gcc-${GCC_VERSION}.tar.gz
@@ -17,10 +17,9 @@ RUN make -j $(nproc)
 RUN make install-strip
 
 
-FROM centos:7
+FROM quay.io/horvathd/sphinx-builder:latest
 
-RUN yum update -y && \
-    yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm && \
+RUN yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm && \
     yum install -y make glibc-headers glibc-devel git ed rpm-build libmpc mpfr fakeroot alien && \
     yum clean all
 
