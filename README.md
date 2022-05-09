@@ -1,6 +1,6 @@
 # Custom GCC (c, c++, fortran) compiler on Centos 7
 
-This Docker file creates a Centos 7 based image to run GCC 12-20220320 compiled from source.
+This Docker file creates a Centos 7 based image to run a gcc snapshot compiled from source.
 
 It also includes tools needed to prepare rpm and deb packages.
 
