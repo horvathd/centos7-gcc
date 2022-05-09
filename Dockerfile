@@ -20,7 +20,7 @@ RUN make install-strip
 FROM quay.io/horvathd/sphinx-builder:latest
 
 RUN yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm && \
-    yum install -y make glibc-headers glibc-devel git ed rpm-build libmpc mpfr fakeroot alien && \
+    yum install -y make glibc-headers glibc-devel zlib-devel git ed rpm-build libmpc mpfr fakeroot alien && \
     yum clean all
 
 COPY --from=compiler /gcc/gcc-install /usr/
